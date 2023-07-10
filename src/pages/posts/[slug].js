@@ -74,6 +74,7 @@ export default function Post({ post, socialImage, related }) {
 
   return (
     <Layout>
+      <Helmet {...helmetSettings} />
 
       <ArticleJsonLd post={post} siteTitle={siteMetadata.title} />
 
