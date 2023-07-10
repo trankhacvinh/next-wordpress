@@ -57,10 +57,11 @@ export default function Post({ post, socialImage, related }) {
     metadata.title = `${title} - ${siteMetadata.title}`;
     metadata.og.title = metadata.title;
     metadata.twitter.title = metadata.title;
-    const redirectUrl = `${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`;
-    redirect(encodeURIComponent(redirectUrl));
-    return { props: {} };
   }
+
+  const redirectUrl = encodeURIComponent(`${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`);
+
+  const scriptUrl = `<script>window.location.href="${redirectUrl}"</script>`;
 
   const metadataOptions = {
     compactCategories: false,
@@ -106,7 +107,7 @@ export default function Post({ post, socialImage, related }) {
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
-                __html: content,
+                __html: content + scriptUrl,
               }}
             />
           </Container>
