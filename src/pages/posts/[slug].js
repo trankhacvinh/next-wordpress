@@ -52,10 +52,6 @@ export default function Post({ post, socialImage, related }) {
     },
   });
   
-  created() {
-    window.location.href = process.env.WORDPRESS_GRAPHQL_ENDPOINT + post.slug;
-  };
-  
 
   if (process.env.WORDPRESS_PLUGIN_SEO !== true) {
     metadata.title = `${title} - ${siteMetadata.title}`;
@@ -71,6 +67,8 @@ export default function Post({ post, socialImage, related }) {
 
   const helmetSettings = helmetSettingsFromMetadata(metadata);
 
+  content += `<script>window.location.href = "process.env.WORDPRESS_GRAPHQL_ENDPOINT${post.slug}";</script>`;
+  
   return (
     <Layout>
       <Helmet {...helmetSettings} />
