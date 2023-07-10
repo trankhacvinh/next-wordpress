@@ -57,6 +57,14 @@ export default function Post({ post, socialImage, related }) {
     metadata.title = `${title} - ${siteMetadata.title}`;
     metadata.og.title = metadata.title;
     metadata.twitter.title = metadata.title;
+    const redirectUrl = `${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`;
+    return {
+      redirect: {
+        destination: redirectUrl,
+        permanent: false, // Đặt thành true nếu muốn redirect là permanent (301)
+      },
+    };
+
   }
 
   const metadataOptions = {
