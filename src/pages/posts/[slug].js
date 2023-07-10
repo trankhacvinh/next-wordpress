@@ -54,7 +54,7 @@ export default function Post({ post, socialImage, related }) {
   
   created() {
     window.location.href = process.env.WORDPRESS_GRAPHQL_ENDPOINT + post.slug;
-  }
+  };
   
 
   if (process.env.WORDPRESS_PLUGIN_SEO !== true) {
