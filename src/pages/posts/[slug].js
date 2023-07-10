@@ -60,7 +60,7 @@ export default function Post({ post, socialImage, related }) {
     return {
       redirect: {
         destination: redirectUrl,
-        permanent: false, // Đặt thành true nếu muốn redirect là permanent (301)
+        permanent: false
       },
     };
   }
