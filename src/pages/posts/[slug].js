@@ -60,7 +60,7 @@ export default function Post({ post, socialImage, related }) {
     return {
       redirect: {
         destination: redirectUrl,
-        permanent: false
+        permanent: false,
       },
     };
   }
