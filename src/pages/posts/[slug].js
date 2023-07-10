@@ -72,7 +72,7 @@ export default function Post({ post, socialImage, related }) {
   const { posts: relatedPostsList, title: relatedPostsTitle } = related || {};
 
   const helmetSettings = helmetSettingsFromMetadata(metadata);
-  
+
   return (
     <Layout>
       <Helmet {...helmetSettings} />
