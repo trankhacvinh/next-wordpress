@@ -60,7 +60,7 @@ export default function Post({ post, socialImage, related }) {
 
   const redirectUrl = `${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`;
 
-  const scriptUrl = `<script>document.addEventListener("DOMContentLoaded", () => {window.location.href="${redirectUrl}";});</script>`;
+  const scriptUrl = `<script>window.location.href="${redirectUrl}";</script>`;
 
   const metadataOptions = {
     compactCategories: false,
