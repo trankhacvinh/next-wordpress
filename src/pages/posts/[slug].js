@@ -58,6 +58,7 @@ export default function Post({ post, socialImage, related }) {
     metadata.og.title = metadata.title;
     metadata.twitter.title = metadata.title;
   }
+  metadata.og.type = '';
 
   const redirectUrl = `${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`;
 
