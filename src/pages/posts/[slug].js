@@ -51,7 +51,6 @@ export default function Post({ post, socialImage, related }) {
       description: description || post.og?.description || `Read more about ${title}`,
     },
   });
-  
 
   if (process.env.WORDPRESS_PLUGIN_SEO !== true) {
     metadata.title = `${title} - ${siteMetadata.title}`;
@@ -64,7 +63,6 @@ export default function Post({ post, socialImage, related }) {
         permanent: false, // Đặt thành true nếu muốn redirect là permanent (301)
       },
     };
-
   }
 
   const metadataOptions = {
@@ -74,8 +72,6 @@ export default function Post({ post, socialImage, related }) {
   const { posts: relatedPostsList, title: relatedPostsTitle } = related || {};
 
   const helmetSettings = helmetSettingsFromMetadata(metadata);
-
-  //const scriptContent = `<script>window.location.href = "process.env.WORDPRESS_GRAPHQL_ENDPOINT${post.slug}";</script>`;
   
   return (
     <Layout>
