@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { redirect } from 'next/router';
 import { Helmet } from 'react-helmet';
 
 import { getPostBySlug, getRecentPosts, getRelatedPosts, postPathBySlug } from 'lib/posts';
