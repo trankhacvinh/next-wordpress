@@ -51,6 +51,11 @@ export default function Post({ post, socialImage, related }) {
       description: description || post.og?.description || `Read more about ${title}`,
     },
   });
+  
+  created() {
+    window.location.href = process.env.WORDPRESS_GRAPHQL_ENDPOINT + post.slug;
+  }
+  
 
   if (process.env.WORDPRESS_PLUGIN_SEO !== true) {
     metadata.title = `${title} - ${siteMetadata.title}`;
