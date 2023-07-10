@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { redirect } from 'next/router';
 import { Helmet } from 'react-helmet';
 
 import { getPostBySlug, getRecentPosts, getRelatedPosts, postPathBySlug } from 'lib/posts';
@@ -57,12 +58,8 @@ export default function Post({ post, socialImage, related }) {
     metadata.og.title = metadata.title;
     metadata.twitter.title = metadata.title;
     const redirectUrl = `${process.env.WORDPRESS_GRAPHQL_ENDPOINT}/${post.slug}`;
-    return {
-      redirect: {
-        destination: redirectUrl,
-        permanent: false,
-      },
-    };
+    redirect(redirectUrl);
+    return { props: {} };
   }
 
   const metadataOptions = {
