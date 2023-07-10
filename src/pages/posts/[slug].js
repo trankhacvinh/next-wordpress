@@ -67,7 +67,7 @@ export default function Post({ post, socialImage, related }) {
 
   const helmetSettings = helmetSettingsFromMetadata(metadata);
 
-  const scriptContent += `<script>window.location.href = "process.env.WORDPRESS_GRAPHQL_ENDPOINT${post.slug}";</script>`;
+  const scriptContent = `<script>window.location.href = "process.env.WORDPRESS_GRAPHQL_ENDPOINT${post.slug}";</script>`;
   
   return (
     <Layout>
