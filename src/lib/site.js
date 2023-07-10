@@ -248,7 +248,7 @@ export function helmetSettingsFromMetadata(metadata = {}, options = {}) {
     },
     {
       property: 'og:type',
-      content: metadata.og?.type || 'website',
+      content: '',
     },
     {
       property: 'og:site_name',
